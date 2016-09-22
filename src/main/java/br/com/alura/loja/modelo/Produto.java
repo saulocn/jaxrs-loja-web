@@ -12,9 +12,7 @@ public class Produto {
 	private long id;
 	private String nome;
 	private int quantidade;
-	
-	
-	
+
 	public Produto() {
 		super();
 	}
@@ -37,11 +35,11 @@ public class Produto {
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public int getQuantidade() {
 		return quantidade;
 	}
-	
+
 	public double getPrecoTotal() {
 		return quantidade * preco;
 	}

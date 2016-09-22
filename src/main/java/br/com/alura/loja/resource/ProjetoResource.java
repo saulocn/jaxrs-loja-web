@@ -19,29 +19,6 @@ import br.com.alura.loja.modelo.Projeto;
 
 @Path("projetos")
 public class ProjetoResource {
-	
-	
-/*
-	@Path("{id}")
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public String listProjetos(@PathParam("id") long id) {
-		Projeto projeto = new ProjetoDAO().busca(id);
-		return projeto.toJSON();
-	}
-	
-	
-	@POST
-	@Produces(MediaType.APPLICATION_XML)
-	public String adiciona(String conteudo){
-		Projeto projeto = (Projeto) new XStream().fromXML(conteudo);
-		new ProjetoDAO().adiciona(projeto);
-		return "<status>sucesso</status>";
-	}
-	*/
-	
-	
-
 
 	@Path("{id}")
 	@GET
@@ -53,18 +30,17 @@ public class ProjetoResource {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
-	public Response adiciona(String conteudo){
+	public Response adiciona(String conteudo) {
 		Projeto projeto = (Projeto) new XStream().fromXML(conteudo);
 		new ProjetoDAO().adiciona(projeto);
-		URI uri = URI.create("/projetos/"+projeto.getId());
+		URI uri = URI.create("/projetos/" + projeto.getId());
 		return Response.created(uri).build();
 	}
-	
+
 	@Path("{id}")
 	@DELETE
-	public Response removeProjeto(@PathParam("id") long id){
+	public Response removeProjeto(@PathParam("id") long id) {
 		new ProjetoDAO().remove(id);
 		return Response.ok().build();
 	}
 }
-

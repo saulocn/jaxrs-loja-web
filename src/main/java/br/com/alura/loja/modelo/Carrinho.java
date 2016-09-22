@@ -19,9 +19,6 @@ public class Carrinho {
 	private String rua;
 	private String cidade;
 	private long id;
-	
-	
-	
 
 	public Carrinho() {
 		super();
@@ -58,8 +55,6 @@ public class Carrinho {
 	public long getId() {
 		return id;
 	}
-	
-	
 
 	public String getCidade() {
 		return cidade;
